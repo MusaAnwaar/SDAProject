@@ -11,7 +11,11 @@ public class AppointmentDescription {
         Fee = fee;
     }
 
-    public int getServiceID() {
+    public AppointmentDescription() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getServiceID() {
         return ServiceID;
     }
 
