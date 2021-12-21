@@ -21,6 +21,9 @@ public class Appointment {
 		Date = date;
 		AppointmentStatus = appointmentStatus;
 	}
+	public Appointment() {
+		// TODO Auto-generated constructor stub
+	}
 	public void setAppointmentDetails(AppointmentDescription description, Payment payment, Booking booking, int appointmentID,
 			String time, String date, int appointmentStatus) {
 		Description = description;
