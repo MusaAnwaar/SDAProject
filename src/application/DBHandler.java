@@ -8,7 +8,7 @@ public class DBHandler
 {	
 	public void setFeedback(Feedback obj)
 	{
-		
+		//Saving Feedback Object to DB
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		
 		Session session = factory.openSession();

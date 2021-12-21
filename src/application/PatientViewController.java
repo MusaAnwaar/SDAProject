@@ -64,7 +64,6 @@ public class PatientViewController implements Initializable{
                 new Patient(33,60,"Rafia", "57543535", "rafia@gmail.com")
             );
 
-        //int id, int age, String name, String cnic, String email
 
         //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
         PatientIDColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
