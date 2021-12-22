@@ -12,7 +12,13 @@ public class Booking {
         BookingStatus = bookingStatus;
         DateBooking = dateBooking;
     }
-    public void setBookingDetails(int bookingRefCode, Patient patient, int bookingStatus, String dateBooking)
+    public Booking() {
+		this.patient=new Patient();
+		BookingRefCode=0;//p.key
+		BookingStatus=0;
+		DateBooking="";
+	}
+	public void setBookingDetails(int bookingRefCode, Patient patient, int bookingStatus, String dateBooking)
     {
         BookingRefCode = bookingRefCode;
         this.patient = patient;
@@ -37,6 +43,13 @@ public class Booking {
     public int getBookingStatus() {
         return BookingStatus;
     }
+    public void setPatientDetails(int age, String name, int cnic, String email) {
+
+		this.patient.setAge(age);
+		this.patient.setName(name);
+		this.patient.setCnic(cnic);
+		this.patient.setEmail(email);
+	}
 
     public void setBookingStatus(int bookingStatus) {
         BookingStatus = bookingStatus;

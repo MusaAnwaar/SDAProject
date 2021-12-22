@@ -25,13 +25,23 @@ public class AppointmentsHandler implements Initializable {
 		ComboBox<String> descBox=new ComboBox<String>();
 		
 		@FXML
-		TextField  starttime = new TextField();
+		TextField  timem = new TextField();
 		@FXML
-		TextField  endtime = new TextField();
+		TextField  timeh = new TextField();
 		@FXML
 		TextField  day = new TextField();
 		@FXML
 		TextField  month = new TextField();
+		
+		@FXML
+		TextField  name = new TextField();
+		@FXML
+		TextField  age = new TextField();
+		@FXML
+		TextField  cnic = new TextField();
+		@FXML
+		TextField  email = new TextField();
+		
 		@FXML
 		TextField  year = new TextField();
 		
@@ -95,9 +105,14 @@ public class AppointmentsHandler implements Initializable {
 	    {
 	    	BookAppointmentController b=new BookAppointmentController();
 	    	String service=descBox.getValue();
-	    	String Time=starttime.getText()+"-"+endtime.getText();
+	    	int Timem=Integer.parseInt(timem.getText());
+	    	int Timeh=Integer.parseInt(timeh.getText());
 	    	String Date=day.getText()+"-"+month.getText()+"-"+year.getText();
-	    	b.BookAppointment(service, Time, Date);
+	    	String Name=name.getText();
+	    	int Age=Integer.parseInt(age.getText());
+	    	int Cnic=Integer.parseInt(cnic.getText());
+	    	String Email=email.getText();
+	    	b.BookAppointment(service, Timem,Timeh, Date,Name,Age,Cnic,Email);
 	    	Parent HomeView = FXMLLoader.load(getClass().getResource("AppointmentBookingSuccessful.fxml"));
 			Scene HomeScene=  new Scene(HomeView);
 			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();

@@ -5,37 +5,47 @@ public class Appointment {
     Payment payment;
     Booking booking;
     int AppointmentID;//p.key
-    String Time;
+    int Timem;
+    int Timeh;
     String Date;
     int AppointmentStatus;
 
     
 	
     public Appointment(AppointmentDescription description, Payment payment, Booking booking, int appointmentID,
-			String time, String date, int appointmentStatus) {
+			int timem, int timeh, String date, int appointmentStatus) {
 		Description = description;
 		this.payment = payment;
 		this.booking = booking;
 		AppointmentID = appointmentID;
-		Time = time;
+		Timem = timem;
+		Timeh = timeh;
 		Date = date;
 		AppointmentStatus = appointmentStatus;
 	}
+	
 	public Appointment() {
-		// TODO Auto-generated constructor stub
+		this.payment=new Payment();
+		this.booking=new Booking();
+		this.Description= new AppointmentDescription();
+		int AppointmentID=0;//p.key
+		int Timem=0;
+		int Timeh=0;
+		String Date="";
+		int AppointmentStatus=0;
+
 	}
 	public void setAppointmentDetails(AppointmentDescription description, Payment payment, Booking booking, int appointmentID,
-			String time, String date, int appointmentStatus) {
+			int timem, int timeh, String date, int appointmentStatus) {
 		Description = description;
 		this.payment = payment;
 		this.booking = booking;
 		AppointmentID = appointmentID;
-		Time = time;
+		Timem = timem;
+		Timeh = timeh;
 		Date = date;
 		AppointmentStatus = appointmentStatus;
 	}
-    
-
     public int getAppointmentStatus() {
 		return AppointmentStatus;
 	}
@@ -43,6 +53,22 @@ public class Appointment {
 		AppointmentStatus = appointmentStatus;
 	}
 	
+	public int getTimem() {
+		return Timem;
+	}
+
+	public void setTimem(int timem) {
+		Timem = timem;
+	}
+
+	public int getTimeh() {
+		return Timeh;
+	}
+
+	public void setTimeh(int timeh) {
+		Timeh = timeh;
+	}
+
 	public AppointmentDescription getDescription() {
         return Description;
     }
@@ -75,13 +101,6 @@ public class Appointment {
         AppointmentID = appointmentID;
     }
 
-    public String getTime() {
-        return Time;
-    }
-
-    public void setTime(String time) {
-        Time = time;
-    }
 
     public String getDate() {
         return Date;

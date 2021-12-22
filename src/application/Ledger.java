@@ -4,7 +4,12 @@ public class Ledger {
     int RecordNo;//p.key
     Payment payment;
 
-    public Ledger(int recordNo, Payment payment) {
+    public Ledger() {
+		RecordNo=0;
+		payment=new Payment();
+	}
+
+	public Ledger(int recordNo, Payment payment) {
         RecordNo = recordNo;
         this.payment = payment;
     }
