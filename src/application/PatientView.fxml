@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: Images\v870-tang-36.jpg;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PatientViewController">
+<VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: Images\v870-tang-36.jpg;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PatientViewHandler">
     <children>
         <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="back-white" VBox.vgrow="ALWAYS">
             <children>

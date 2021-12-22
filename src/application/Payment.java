@@ -15,7 +15,11 @@ public class Payment {
         DatePaid = datePaid;
     }
 
-    public int getPaymentID() {
+    public Payment() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getPaymentID() {
         return PaymentID;
     }
 

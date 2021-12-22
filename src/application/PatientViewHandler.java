@@ -21,10 +21,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class PatientViewController implements Initializable{
+public class PatientViewHandler implements Initializable{
 
     @FXML
-    private TableColumn<Patient, String> CNICColumn;
+    private TableColumn<Patient, Integer> CNICColumn;
 
     @FXML
     private TableColumn<Patient,String> EmailColumn;
@@ -59,9 +59,9 @@ public class PatientViewController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<Patient> person = FXCollections.observableArrayList(
-        new Patient(12,20,"Moosa", "12345678","moosa@gmail.com"),
-                new Patient(22,21,"Zainab", "45565556", "zainab@gmail.com"),
-                new Patient(33,60,"Rafia", "57543535", "rafia@gmail.com")
+        new Patient(12,20,"Moosa", 12345678,"moosa@gmail.com"),
+                new Patient(22,21,"Zainab", 45565556, "zainab@gmail.com"),
+                new Patient(33,60,"Rafia", 57543535, "rafia@gmail.com")
             );
 
         //int id, int age, String name, String cnic, String email

@@ -14,11 +14,11 @@ public class Patient {
 	
 	private String name;
 	
-	private String cnic;
+	private int cnic;
 	
 	private String email;
 	
-	public Patient(int id, int age, String name, String cnic, String email) {
+	public Patient(int id, int age, String name, int cnic, String email) {
 		super();
 		this.id = id;
 		this.age = age;
@@ -48,10 +48,10 @@ public class Patient {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getCnic() {
+	public int getCnic() {
 		return cnic;
 	}
-	public void setCnic(String cnic) {
+	public void setCnic(int cnic) {
 		this.cnic = cnic;
 	}
 	public String getEmail() {

@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="797.0" style="-fx-background-color: white;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PaymentHandler">
    <children>
-      <ImageView fitHeight="536.0" fitWidth="796.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="532.0" fitWidth="872.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/v870-tang-36.jpg" />
          </image>

@@ -17,7 +17,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class Clinic_Controller {
+public class ClinicHandler {
 
 	@FXML
 	Button login;
@@ -62,7 +62,7 @@ public class Clinic_Controller {
 	
 	private static Clinic clinic;
 
-	public Clinic_Controller() {
+	public ClinicHandler() {
 		clinic = clinic.getInstance();
 	}
     @FXML
