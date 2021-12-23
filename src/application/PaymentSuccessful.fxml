@@ -15,9 +15,9 @@
             <Image url="@Images/v870-tang-36.jpg" />
          </image>
       </ImageView>
-      <Label ellipsisString="" layoutX="294.0" layoutY="99.0" prefHeight="90.0" prefWidth="208.0" text="PAYMENT">
+      <Label ellipsisString="" layoutX="230.0" layoutY="179.0" prefHeight="90.0" prefWidth="450.0" text="Your Payment has been recieved!">
          <font>
-            <Font name="Calisto MT Bold Italic" size="35.0" />
+            <Font name="Calisto MT Bold Italic" size="34.0" />
          </font>
          <cursor>
             <Cursor fx:constant="DEFAULT" />
@@ -29,13 +29,5 @@
             <Image url="@Images/25694.png" />
          </image>
       </ImageView>
-      <Label ellipsisString="" layoutX="428.0" layoutY="179.0" prefHeight="90.0" prefWidth="208.0" text="RECEIVED!!">
-         <font>
-            <Font name="Calisto MT Bold Italic" size="35.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </Label>
    </children>
 </AnchorPane>

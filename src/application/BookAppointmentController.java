@@ -13,16 +13,6 @@ public class BookAppointmentController {
 	  {
 		 Appointment a= new Appointment();
 		 a.getBooking().setPatientDetails(age, name, cnic, email);
-		 a.booking.setBookingDetails(1, new Date());
-		 a.Description = this.SearchCatalogue(service);
-		 DBHandler ins = new DBHandler();
-		  ins.DescriptionDBHandler(a.Description);
-		 
-		 a.payment.setPaymentDetails(a.Description.getFee(), 0);
-		 
-		 a.setAppointmentDetails(a.Description,a.payment,a.booking, timem, timeh, date, 1);
-		 
-		 
 	  }
 	  public AppointmentDescription SearchCatalogue(String service)
 	  {

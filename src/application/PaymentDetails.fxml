@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="797.0" style="-fx-background-color: white;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AppointmentsHandler">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="797.0" style="-fx-background-color: white;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PaymentHandler">
    <children>
       <ImageView fitHeight="539.0" fitWidth="797.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -23,8 +23,8 @@
          </image>
       </ImageView>
       <TextField fx:id="AppID" layoutX="459.0" layoutY="132.0" style="-fx-background-radius: 10; -fx-background-color: #6accb2;" />
-      <TextField fx:id="name1" layoutX="459.0" layoutY="215.0" style="-fx-background-radius: 10; -fx-background-color: #6accb2;" />
-      <TextField fx:id="cnic1" layoutX="459.0" layoutY="299.0" style="-fx-background-radius: 10; -fx-background-color: #6accb2;" />
+      <TextField fx:id="name" layoutX="459.0" layoutY="215.0" style="-fx-background-radius: 10; -fx-background-color: #6accb2;" />
+      <TextField fx:id="cnic" layoutX="459.0" layoutY="299.0" style="-fx-background-radius: 10; -fx-background-color: #6accb2;" />
       <Label layoutX="302.0" layoutY="130.0" prefHeight="30.0" prefWidth="113.0" text="Appointment ID">
          <font>
             <Font name="System Bold Italic" size="14.0" />
@@ -34,7 +34,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="313.0" layoutY="296.0" prefHeight="30.0" prefWidth="90.0" text="Patient CNIC">
+      <Label layoutX="314.0" layoutY="296.0" prefHeight="30.0" prefWidth="89.0" text="Patient CNIC">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
@@ -54,8 +54,8 @@
             <Image url="@Images/152533.png" />
          </image>
       </ImageView>
-      <Button layoutX="474.0" layoutY="386.0" mnemonicParsing="false" onAction="#getCancelled" opacity="0.0" prefHeight="60.0" prefWidth="60.0" text="Button" />
-      <Text fx:id="Promptc" fill="#9c0505" layoutX="436.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0">
+      <Button layoutX="474.0" layoutY="386.0" mnemonicParsing="false" onAction="#getFee" opacity="0.0" prefHeight="60.0" prefWidth="60.0" text="Button" />
+      <Text fx:id="Prompt" fill="#9c0505" layoutX="436.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

@@ -106,7 +106,6 @@ public class Clinic {
 		clinic.setAppointmentCatalogue(AC);
 	}
 	
-
 	public void setFeedback(String str)
 	{
 			Feedback f = new Feedback();
