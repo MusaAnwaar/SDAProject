@@ -21,6 +21,8 @@ public class CancelAppointmentController {
 				  {
 					  if(AppSchedule.get(i).getBooking().getPatient().getCnic()==cnic)
 					  {
+						  DBHandler ins = new DBHandler();
+						  ins.cancelUpdateDBHandler(AppSchedule.get(i).getBooking().getPatient().getId());
 						  AppSchedule.get(i).getBooking().setBookingStatus(0);
 						  check=1;
 					  }

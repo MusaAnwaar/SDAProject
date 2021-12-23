@@ -51,7 +51,8 @@ public class ClinicHandler {
 	
 	@FXML
 	TextField patient_id = new TextField();
-	
+
+
 /*	@FXML
 	TextField InvDisp= new TextField();
 */
@@ -69,7 +70,7 @@ public class ClinicHandler {
 	}
     @FXML
     private void LogIn() throws IOException {
-    	//clinic.fill();
+
         db.Intialize();
     	String username = user_n.getText();
         String password = pass_w.getText();

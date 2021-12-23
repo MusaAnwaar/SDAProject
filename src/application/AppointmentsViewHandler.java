@@ -94,7 +94,7 @@ public class AppointmentsViewHandler implements Initializable{
 		{
 			if(list.get(i).booking.getBookingStatus()==0)
 			{
-				list1.add("NotBooked");
+				list1.add("Cancelled");
 			}
 			else
 			{

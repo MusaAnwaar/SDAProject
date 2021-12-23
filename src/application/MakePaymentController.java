@@ -1,6 +1,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MakePaymentController {
@@ -41,9 +42,13 @@ public class MakePaymentController {
 			  {
 				  AppSchedule.get(i).getPayment().setPaidStatus(1);
 				  //System.out.println("I come here");
+				  DBHandler ins = new DBHandler();
+				  ins.updatePaymentDBHandler(AppSchedule.get(i).payment.PaymentID);
+				  AppSchedule.get(i).getPayment().setPaidStatus(1);
+				  AppSchedule.get(i).getPayment().setDatePaid(new Date());;
+				  //System.out.println("I come here");	
 			  }
-				  
 		  }
 	  }
-
+				  
 }

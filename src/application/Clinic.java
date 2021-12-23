@@ -3,6 +3,7 @@ package application;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Clinic {
     String Adress;
@@ -13,8 +14,9 @@ public class Clinic {
     Doctor doctor1;
     List<Appointment> AppointmentSchedule=new ArrayList<Appointment>();
     List<AppointmentDescription> AppointmentCatalogue=new ArrayList<AppointmentDescription>();
+
     List<Feedback> Feedbacks=new ArrayList<Feedback>();
-    
+
     private static Clinic clinic = null; 
     private Clinic() {
 	}
@@ -23,7 +25,6 @@ public class Clinic {
         if (clinic == null) {
         	clinic = new Clinic();
         	clinic.loadAppointmentCatalogue();
-
         }
         return clinic;
     }
