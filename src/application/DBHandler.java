@@ -12,26 +12,21 @@ import javafx.collections.ObservableList;
 
 public class DBHandler 
 {	
-	  private static Clinic clinic = null; 
+
+	 private static Clinic clinic = null; 
+
 	  public DBHandler() 
 	  {
 			clinic = clinic.getInstance();
-			//this.Intialize();
-			
 	  }
 	  public void Intialize()
 	  {
-		  SessionFactory factory = new Configuration().configure().buildSessionFactory();
-			
+		    SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		  	Session session = factory.openSession();
 			String query = "from Appointment";
 			Query q=session.createQuery(query);
 			List<Appointment> list=q.list(); 
 			clinic.AppointmentSchedule=q.list();
-			/*for(int i=0;i<clinic.AppointmentSchedule.size();i++)
-			{
-				System.out.println(clinic.AppointmentSchedule.get(i).getAppointmentID());
-			}*/
 	  }
 	  
 	  /*public List paymentlist() //sends lists of apps for makepayment

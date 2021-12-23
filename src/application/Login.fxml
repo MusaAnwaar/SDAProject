@@ -27,7 +27,7 @@
          </font>
       </Label>
       <Button fx:id="Re_login" layoutX="71.0" layoutY="224.0" mnemonicParsing="false" onAction="#LogIn" opacity="0.0" text="Button" />
-      <TextField fx:id="pass_w" layoutX="39.0" layoutY="187.0" />
+      <TextField fx:id="pass_w" layoutX="39.0" layoutY="187.0" promptText="******" />
       <ImageView disable="true" fitHeight="34.0" fitWidth="27.0" layoutX="85.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/152533.png" />
