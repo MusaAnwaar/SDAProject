@@ -12,6 +12,29 @@ import javafx.collections.ObservableList;
 
 public class DBHandler 
 {	
+	 //private static Clinic clinic = null; 
+	  public DBHandler() 
+	  {
+			//clinic = clinic.getInstance();
+			//this.Intialize();
+			
+	  }
+	  
+	  public void Intialize()
+	  {
+		  	SessionFactory factory = new Configuration().configure().buildSessionFactory();
+			
+			
+			Session session = factory.openSession();
+			session.beginTransaction();
+			Appointment p = (Appointment) session.get(Appointment.class, 1);
+			
+			System.out.println(p.getAppointmentID());
+			
+			System.out.println(p.getPayment().Amount);
+			
+	  }
+	
 	public void setFeedback(Feedback obj)
 	{
 		//Saving Feedback Object to DB

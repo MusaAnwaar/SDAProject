@@ -23,47 +23,14 @@ public class Main extends Application
 	@Override
     public void start(Stage stage) throws Exception {
 		
-		/*SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		
-		//creating Patient
-		Patient pat = new Patient();
-		//pat.setId(2);;
-		pat.setAge(20);
-		pat.setName("Zainab");
-		pat.setCnic(12);
-		pat.setEmail("zainoob@yahoo.com");
-		
-		Patient pat2 = new Patient();
-		//pat2.setId(3);;
-		pat2.setAge(20);
-		pat2.setName("Musa");
-		pat2.setCnic(11);
-		pat2.setEmail("zainoob@yahoo.com");
-		//System.out.println(pat);
-		
-		Session session = factory.openSession();
-		
-		session.beginTransaction();
-		session.save(pat);
+		/*session.save(pat);
 		session.save(pat2);
-		session.getTransaction().commit();
+		session.getTransaction().commit();*/
 		
-		session.close();/*
+		//session.close();/*
 		
-		Feedback f = new Feedback();
-		f.setFeedback("musa");
-		f.setDateAdded(new Date());
 	
-		Session session = factory.openSession();
-		
-		session.beginTransaction();
-		session.save(f);
-		
-		session.getTransaction().commit();
-		
-		session.close();*/
-		
-		
 		//System.out.println(factory);
 		//System.out.println(factory.isClosed());
 		
