@@ -23,7 +23,7 @@ public class Main extends Application
 	@Override
     public void start(Stage stage) throws Exception {
 		
-		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		/*SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		
 		//creating Patient
 		Patient pat = new Patient();

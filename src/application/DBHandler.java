@@ -1,5 +1,6 @@
 package application;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -42,4 +43,79 @@ public class DBHandler
 		session.close();
 		factory.close();*/
 		}
+	public void PatientDBHandler(Patient obj)
+	{
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		
+		Session session = factory.openSession();
+	
+		
+		session.beginTransaction();
+		session.save(obj);
+		session.getTransaction().commit();
+		
+		session.close();
+		factory.close();
+	}
+	
+	public void BookingDBHandler(Booking obj)
+	{
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		
+		Session session = factory.openSession();
+		
+	
+		session.beginTransaction();
+		session.save(obj);
+		session.getTransaction().commit();
+		
+		session.close();
+		factory.close();
+	}
+	
+	public void AppointmentDBHandler(Appointment obj)
+	{
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		
+		Session session = factory.openSession();
+		
+	
+		session.beginTransaction();
+		session.save(obj);
+		session.getTransaction().commit();
+		
+		session.close();
+		factory.close();
+	}
+	
+	public void DescriptionDBHandler(AppointmentDescription obj)
+	{
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		
+		Session session = factory.openSession();
+		
+	
+		session.beginTransaction();
+		session.save(obj);
+		session.getTransaction().commit();
+		
+		session.close();
+		factory.close();
+	}
+	
+	public void PaymentDBHandler(Payment obj)
+	{
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		
+		Session session = factory.openSession();
+		
+	
+		session.beginTransaction();
+		session.save(obj);
+		session.getTransaction().commit();
+		
+		session.close();
+		factory.close();
+	}
+
 }
