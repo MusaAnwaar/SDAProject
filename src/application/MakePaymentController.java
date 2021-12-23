@@ -1,6 +1,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MakePaymentController {
 	
@@ -12,7 +13,7 @@ public class MakePaymentController {
 	  public int getFee(int appID,String name,int cnic)
 	  {
 		  int Fee=0;
-		  ArrayList<Appointment> AppSchedule=new ArrayList<Appointment>();
+		  List<Appointment> AppSchedule=new ArrayList<Appointment>();
 		  AppSchedule=clinic.getAppointmentSchedule();
 		  for(int i=0;i<AppSchedule.size();i++)
 		  {
@@ -29,6 +30,20 @@ public class MakePaymentController {
 				  
 		  }
 		  return Fee;  
+	  }
+	  public void MakePayment(int appID)
+	  {
+		  List<Appointment> AppSchedule=new ArrayList<Appointment>();
+		  AppSchedule=clinic.getAppointmentSchedule();
+		  for(int i=0;i<AppSchedule.size();i++)
+		  {
+			  if(AppSchedule.get(i).getAppointmentID()==appID)
+			  {
+				  AppSchedule.get(i).getPayment().setPaidStatus(1);
+				  //System.out.println("I come here");
+			  }
+				  
+		  }
 	  }
 
 }

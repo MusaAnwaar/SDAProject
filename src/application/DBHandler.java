@@ -12,26 +12,20 @@ import javafx.collections.ObservableList;
 
 public class DBHandler 
 {	
-	 //private static Clinic clinic = null; 
+	 private static Clinic clinic = null; 
 	  public DBHandler() 
 	  {
-			//clinic = clinic.getInstance();
-			//this.Intialize();
-			
+			clinic = clinic.getInstance();
 	  }
-	  
 	  public void Intialize()
 	  {
-		  	SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		    SessionFactory factory = new Configuration().configure().buildSessionFactory();
 			
-			
-			Session session = factory.openSession();
-			session.beginTransaction();
-			Appointment p = (Appointment) session.get(Appointment.class, 1);
-			
-			System.out.println(p.getAppointmentID());
-			
-			System.out.println(p.getPayment().Amount);
+		  	Session session = factory.openSession();
+			String query = "from Appointment";
+			Query q=session.createQuery(query);
+			List<Appointment> list=q.list(); 
+			clinic.AppointmentSchedule=q.list();
 			
 	  }
 	

@@ -1,8 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
-
+<VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: Images\v870-tang-36.jpg;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AppointmentsViewHandler">
+    <children>
+        <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #60b198;" styleClass="back-white" VBox.vgrow="ALWAYS">
+            <children>
+                <Label id="title" fx:id="titleLabel" layoutX="40.0" layoutY="14.0" text="Appointments" textFill="WHITE">
+                    <font>
+                        <Font name="PT Serif Caption" size="36.0" />
+                    </font>
+                </Label>
+            <Button ellipsisString="" layoutX="523.0" layoutY="27.0" mnemonicParsing="false" onAction="#home" opacity="0.0" prefHeight="42.0" prefWidth="47.0" />
+            <ImageView disable="true" fitHeight="42.0" fitWidth="47.0" layoutX="526.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/25694.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="AppointmentsView" layoutX="32.0" layoutY="69.0" prefHeight="322.0" prefWidth="216.0">
+              <columns>
+                <TableColumn fx:id="AppID" prefWidth="108.79998779296875" text="AppointmentID" />
+                <TableColumn fx:id="AppDate" prefWidth="106.4000244140625" text="Date" />
+              </columns>
+               <effect>
+                  <Blend />
+               </effect>
+            </TableView>
+            <TableView fx:id="TimeView" layoutX="247.0" layoutY="69.0" prefHeight="322.0" prefWidth="111.0">
+              <columns>
+                <TableColumn fx:id="AppTime" prefWidth="110.39996337890625" text="Time" />
+              </columns>
+            </TableView>
+            <TableView fx:id="BookingStatusView" layoutX="354.0" layoutY="69.0" prefHeight="322.0" prefWidth="111.0">
+              <columns>
+                <TableColumn fx:id="BookedStatus" prefWidth="110.40001220703125" text="Booking Status" />
+              </columns>
+            </TableView>
+            <TableView fx:id="PatientNameView" layoutX="464.0" layoutY="69.0" prefHeight="322.0" prefWidth="104.0">
+              <columns>
+                <TableColumn fx:id="PatientName" prefWidth="103.20001220703125" text="Patient" />
+              </columns>
+            </TableView>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
