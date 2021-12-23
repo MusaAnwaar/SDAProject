@@ -223,7 +223,7 @@ public class AppointmentsHandler implements Initializable {
 	    @FXML
 	    private void RescheduleAddAppointmentDetails(ActionEvent event) throws IOException
 	    {
-	    	BookAppointmentController b=new BookAppointmentController();
+	    	//BookAppointmentController b=new BookAppointmentController();
 	    	String service=descBox1.getValue();
 	    	int Timem=Integer.parseInt(timem1.getText());
 	    	int Timeh=Integer.parseInt(timeh1.getText());
@@ -232,7 +232,7 @@ public class AppointmentsHandler implements Initializable {
 	    	int Age=Integer.parseInt(age0.getText());
 	    	int Cnic=Integer.parseInt(cnic0.getText());
 	    	String Email=email0.getText();
-	    	b.BookAppointment(service, Timem,Timeh, Date,Name,Age,Cnic,Email);
+	    	//b.BookAppointment(service, Timem,Timeh, Date,Name,Age,Cnic,Email);
 	    	Parent HomeView = FXMLLoader.load(getClass().getResource("AppointmentBookingSuccessful.fxml"));
 			Scene HomeScene=  new Scene(HomeView);
 			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
