@@ -2,6 +2,7 @@ package application;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Clinic {
     String Adress;
@@ -10,10 +11,10 @@ public class Clinic {
     int ClinicID;
     Ledger ledger1;
     Doctor doctor1;
-    ArrayList<Appointment> AppointmentSchedule=new ArrayList<Appointment>();
-    ArrayList<AppointmentDescription> AppointmentCatalogue=new ArrayList<AppointmentDescription>();
-    ArrayList<Feedback> Feedbacks=new  ArrayList<Feedback>();
-    DBHandler clinicDBHandler = new DBHandler();
+    List<Appointment> AppointmentSchedule=new ArrayList<Appointment>();
+    List<AppointmentDescription> AppointmentCatalogue=new ArrayList<AppointmentDescription>();
+    List<Feedback> Feedbacks=new  ArrayList<Feedback>();
+    
     
     private static Clinic clinic = null; 
     private Clinic() {
@@ -23,10 +24,7 @@ public class Clinic {
         if (clinic == null) {
         	clinic = new Clinic();
         	clinic.loadAppointmentCatalogue();
-
-        	clinic.clinicDBHandler.Intialize();
   
-
         }
         return clinic;
     }
@@ -67,27 +65,27 @@ public class Clinic {
 	public void setDoctor1(Doctor doctor1) {
 		this.doctor1 = doctor1;
 	}
-	public ArrayList<Appointment> getAppointmentSchedule() {
+	public List<Appointment> getAppointmentSchedule() {
 		return AppointmentSchedule;
 	}
-	public void setAppointmentSchedule(ArrayList<Appointment> appointmentSchedule) {
+	public void setAppointmentSchedule(List<Appointment> appointmentSchedule) {
 		AppointmentSchedule = appointmentSchedule;
 	}
-	public ArrayList<AppointmentDescription> getAppointmentCatalogue() {
+	public List<AppointmentDescription> getAppointmentCatalogue() {
 		return AppointmentCatalogue;
 	}
-	public void setAppointmentCatalogue(ArrayList<AppointmentDescription> appointmentCatalogue) {
+	public void setAppointmentCatalogue(List<AppointmentDescription> appointmentCatalogue) {
 		AppointmentCatalogue = appointmentCatalogue;
 	}
-	public ArrayList<Feedback> getFeedbacks() {
+	public List<Feedback> getFeedbacks() {
 		return Feedbacks;
 	}
-	public void setFeedbacks(ArrayList<Feedback> feedbacks) {
+	public void setFeedbacks(List<Feedback> feedbacks) {
 		Feedbacks = feedbacks;
 	}
 	public void loadAppointmentCatalogue()
 	{
-		ArrayList<AppointmentDescription> AC=new ArrayList<AppointmentDescription>();
+		List<AppointmentDescription> AC=new ArrayList<AppointmentDescription>();
 		AppointmentDescription a = new AppointmentDescription(1,"Regular Check-up",1000);
 		AppointmentDescription b = new AppointmentDescription(2,"Teeth whitening",1500);
 		AppointmentDescription c = new AppointmentDescription(3,"Crowning",7000);
@@ -108,10 +106,7 @@ public class Clinic {
 		AC.add(h);
 		AC.add(i);
 		AC.add(j);
-		for(int i1=0;i1<AC.size();i1++)
-		{
-			System.out.println("This works");
-		}
+		
 		clinic.setAppointmentCatalogue(AC);
 	}
 	
@@ -125,11 +120,5 @@ public class Clinic {
 			Feedbacks.add(f);
 
 	}
-	public void clinicBooks()
-	{
-		for(int i=0;i<clinic.AppointmentCatalogue.size();i++)
-		{
-			System.out.println("This works");
-		}
-	}
+	
 }

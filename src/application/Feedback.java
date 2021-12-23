@@ -60,6 +60,4 @@ public class Feedback {
 		DateAdded = dateAdded;
 	}
 	
-	
-
 }

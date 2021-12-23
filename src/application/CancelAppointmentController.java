@@ -1,6 +1,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CancelAppointmentController {
 	 private static Clinic clinic = null; 
@@ -10,7 +11,7 @@ public class CancelAppointmentController {
 	  public int CancelAppointment(int appID,String name,int cnic)
 	  {
 		  int check=0;
-		  ArrayList<Appointment> AppSchedule=new ArrayList<Appointment>();
+		  List<Appointment> AppSchedule=new ArrayList<Appointment>();
 		  AppSchedule=clinic.getAppointmentSchedule();
 		  for(int i=0;i<AppSchedule.size();i++)
 		  {
@@ -20,6 +21,8 @@ public class CancelAppointmentController {
 				  {
 					  if(AppSchedule.get(i).getBooking().getPatient().getCnic()==cnic)
 					  {
+						  DBHandler ins = new DBHandler();
+						  ins.cancelUpdateDBHandler(AppSchedule.get(i).getBooking().getPatient().getId());
 						  AppSchedule.get(i).getBooking().setBookingStatus(0);
 						  check=1;
 					  }
