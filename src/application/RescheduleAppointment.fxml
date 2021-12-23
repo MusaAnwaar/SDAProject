@@ -21,40 +21,40 @@
             <Image url="@Images/25694.png" />
          </image>
       </ImageView>
-      <Label layoutX="310.0" layoutY="12.0" prefHeight="66.0" prefWidth="254.0" text="Book Appointment">
+      <Label layoutX="283.0" layoutY="12.0" prefHeight="66.0" prefWidth="308.0" text="Reschedule Appointment">
          <font>
             <Font name="Calisto MT Bold Italic" size="30.0" />
          </font>
       </Label>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="268.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="244.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/1642054.png" />
          </image>
       </ImageView>
       <Button fx:id="Home" layoutX="766.0" mnemonicParsing="false" onAction="#home" opacity="0.0" prefHeight="30.0" prefWidth="30.0" text="Button" />
-      <ComboBox fx:id="descBox" layoutX="134.0" layoutY="257.0" prefHeight="26.0" prefWidth="162.0" style="-fx-background-radius: 10; -fx-background-color: #6accb2;" />
+      <ComboBox fx:id="descBox1" layoutX="134.0" layoutY="257.0" prefHeight="26.0" prefWidth="162.0" style="-fx-background-radius: 10; -fx-background-color: #6accb2;" />
       <Label fx:id="o" layoutX="363.0" layoutY="297.0" />
-      <TextField fx:id="timeh" layoutX="134.0" layoutY="164.0" prefHeight="26.0" prefWidth="65.0" promptText="e.g (12)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
+      <TextField fx:id="timeh1" layoutX="134.0" layoutY="164.0" prefHeight="26.0" prefWidth="65.0" promptText="e.g (12)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="timem" layoutX="226.0" layoutY="164.0" prefHeight="26.0" prefWidth="66.0" promptText="e.g (56)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
+      <TextField fx:id="timem1" layoutX="226.0" layoutY="164.0" prefHeight="26.0" prefWidth="66.0" promptText="e.g (56)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="day" layoutX="133.0" layoutY="361.0" prefHeight="26.0" prefWidth="66.0" promptText="e.g 10" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
+      <TextField fx:id="day1" layoutX="133.0" layoutY="361.0" prefHeight="26.0" prefWidth="66.0" promptText="e.g 10" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="month" layoutX="207.0" layoutY="361.0" prefHeight="26.0" prefWidth="66.0" promptText="e.g (12)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
+      <TextField fx:id="month1" layoutX="207.0" layoutY="361.0" prefHeight="26.0" prefWidth="66.0" promptText="e.g (12)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="year" layoutX="283.0" layoutY="361.0" prefHeight="26.0" prefWidth="66.0" promptText="e.g (2021)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
+      <TextField fx:id="year1" layoutX="283.0" layoutY="361.0" prefHeight="26.0" prefWidth="66.0" promptText="e.g (2021)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -84,7 +84,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="379.0" layoutY="426.0" mnemonicParsing="false" onAction="#AddAppointmentDetails" opacity="0.01" prefHeight="52.0" prefWidth="58.0" style="-fx-background-radius: 30;" text="Button" />
+      <Button layoutX="379.0" layoutY="426.0" mnemonicParsing="false" onAction="#RescheduleAddAppointmentDetails" opacity="0.01" prefHeight="52.0" prefWidth="58.0" style="-fx-background-radius: 30;" text="Button" />
       <ImageView disable="true" fitHeight="52.0" fitWidth="66.0" layoutX="385.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/152533.png" />
@@ -110,22 +110,22 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="name" layoutX="569.0" layoutY="163.0" prefHeight="26.0" prefWidth="144.0" promptText="e.g (12)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
+      <TextField fx:id="name0" layoutX="569.0" layoutY="163.0" prefHeight="26.0" prefWidth="144.0" promptText="e.g (12)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="age" layoutX="569.0" layoutY="223.0" prefHeight="26.0" prefWidth="144.0" promptText="e.g (12)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
+      <TextField fx:id="age0" layoutX="569.0" layoutY="223.0" prefHeight="26.0" prefWidth="144.0" promptText="e.g (12)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="email" layoutX="569.0" layoutY="348.0" prefHeight="26.0" prefWidth="144.0" promptText="e.g (12)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
+      <TextField fx:id="email0" layoutX="569.0" layoutY="348.0" prefHeight="26.0" prefWidth="144.0" promptText="e.g (12)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="cnic" layoutX="569.0" layoutY="284.0" prefHeight="26.0" prefWidth="144.0" promptText="e.g (12)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
+      <TextField fx:id="cnic0" layoutX="569.0" layoutY="284.0" prefHeight="26.0" prefWidth="144.0" promptText="e.g (12)" style="-fx-background-radius: 10; -fx-background-color: #6accb2;">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

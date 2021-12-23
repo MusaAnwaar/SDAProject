@@ -24,6 +24,7 @@ public class BookAppointmentController {
 		 a.getBooking().setBookingRefCode(0);
 		 /*a.getBooking().setDateBooking(date);*/
 		 a.getBooking().setPatientDetails(age, name, cnic, email);
+		 clinic.AppointmentSchedule.add(a);
 	  }
 	  public AppointmentDescription SearchCatalogue(String service)
 	  {
@@ -34,7 +35,7 @@ public class BookAppointmentController {
 		  for(int i=0;i<AppointmentCatalogue.size();i++)
 		  {
 			  a=AppointmentCatalogue.get(i);
-			  if(a.Name.compareTo(service)==0)
+			  if(a.getName().compareTo(service)==0)
 			  {
 				  b=a;
 			  }

@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class ClinicHandler {
@@ -34,9 +35,9 @@ public class ClinicHandler {
 	@FXML
 	Button Submit;
 	
-/*	@FXML
-	TextField []  tf ;
-*/	
+	@FXML
+	private Text Prompt=new Text();
+	
 	@FXML
 	TextField  user_n = new TextField();
 	
@@ -193,36 +194,12 @@ public class ClinicHandler {
     }
     @FXML
     private void Cancelled() throws IOException {
-    	String p_id = patient_id.getText();
-        String app_id = appointment_id.getText();
-        if (p_id.equals(str3) && app_id.equals(str4)) {
-			Stage stage = (Stage) Submit.getScene().getWindow();
-	 	     
-		    stage.close();
-	
-		     Scene quizScene = new Scene(FXMLLoader.load(getClass().
-		     getResource("Cancellation.fxml")));
-			 Stage primaryStage1 = new Stage();
-			 primaryStage1.setScene(quizScene);
-			 primaryStage1.show();
-        }
-        
-        else {
-			Stage stage = (Stage) Submit.getScene().getWindow();
-	 	     
-		    stage.close();
-	
-		     Scene quizScene = new Scene(FXMLLoader.load(getClass().
-		     getResource("Re_Cancel.fxml")));
-			 Stage primaryStage1 = new Stage();
-			 primaryStage1.setScene(quizScene);
-			 primaryStage1.show();
-        }
+    	
     }
     
     @FXML
     private void Make_Payment(ActionEvent event) throws IOException {
-    	Parent CalenderView = FXMLLoader.load(getClass().getResource("Make_payment.fxml"));
+    	Parent CalenderView = FXMLLoader.load(getClass().getResource("PaymentDetails.fxml"));
 		Scene CalenderScene=  new Scene(CalenderView);
 		Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
 		window.setScene(CalenderScene);
@@ -239,9 +216,5 @@ public class ClinicHandler {
 		window.setTitle("Main Menu");
 		window.show();
     }
-    
-    
-    
-
 
 }

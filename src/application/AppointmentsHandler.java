@@ -16,11 +16,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class AppointmentsHandler implements Initializable {
 
-	
+		//For booking Appointment
 		@FXML
 		ComboBox<String> descBox=new ComboBox<String>();
 		
@@ -32,6 +33,8 @@ public class AppointmentsHandler implements Initializable {
 		TextField  day = new TextField();
 		@FXML
 		TextField  month = new TextField();
+		@FXML
+		TextField  year = new TextField();
 		
 		@FXML
 		TextField  name = new TextField();
@@ -43,10 +46,57 @@ public class AppointmentsHandler implements Initializable {
 		TextField  email = new TextField();
 		
 		@FXML
-		TextField  year = new TextField();
+		private Text Prompb=new Text();
+		
+		//For canceling Appointment
+		@FXML
+		TextField AppID=new TextField();
+		@FXML
+		TextField name1=new TextField();
+		@FXML
+		TextField cnic1=new TextField();
 		
 		@FXML
-		Label o;
+		private Text Promptc=new Text();
+		
+		//For rescheduling Appointment
+		@FXML
+		TextField AppID2=new TextField();
+		@FXML
+		TextField name2=new TextField();
+		@FXML
+		TextField cnic2=new TextField();
+				
+		@FXML
+		private Text Promptd=new Text();
+		
+		//For rescheduling booking
+		@FXML
+		ComboBox<String> descBox1=new ComboBox<String>();
+				
+		@FXML
+		TextField  timem1 = new TextField();
+		@FXML
+		TextField  timeh1 = new TextField();
+		@FXML
+		TextField  day1 = new TextField();
+		@FXML
+		TextField  month1 = new TextField();
+		@FXML
+		TextField  year1 = new TextField();
+				
+		@FXML
+		TextField  name0 = new TextField();
+		@FXML
+		TextField  age0 = new TextField();
+		@FXML
+		TextField  cnic0 = new TextField();
+		@FXML
+		TextField  email0 = new TextField();
+				
+		@FXML
+		private Text Prompta=new Text();
+		
 		
 		private static Clinic clinic = null; 
 		  public AppointmentsHandler() {
@@ -83,7 +133,7 @@ public class AppointmentsHandler implements Initializable {
 	    }
 	    @FXML
 	    private void Reschedule_appointment(ActionEvent event) throws IOException {
-	    	Parent CalenderView = FXMLLoader.load(getClass().getResource("Reschedule_Appointment.fxml"));
+	    	Parent CalenderView = FXMLLoader.load(getClass().getResource("CancelAppointmentToReschedule.fxml"));
 			Scene CalenderScene=  new Scene(CalenderView);
 			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
 			window.setScene(CalenderScene);
@@ -120,6 +170,75 @@ public class AppointmentsHandler implements Initializable {
 			window.setTitle("Main Menu");
 			window.show();
 	    		
+	    }
+	    @FXML
+		private void getCancelled(ActionEvent event) throws IOException { 
+	    	
+	    	int check=0;
+			int appid=Integer.parseInt(AppID.getText());
+			String Name=name1.getText();
+			int Cnic=Integer.parseInt(cnic1.getText());
+			CancelAppointmentController c=new CancelAppointmentController();
+			check=c.CancelAppointment(appid, Name, Cnic);
+			if(check!=0)
+			{	
+				Parent CalenderView = FXMLLoader.load(getClass().getResource("AppointmentCancellationSuccessful.fxml"));
+				Scene CalenderScene=  new Scene(CalenderView);
+				Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+				window.setScene(CalenderScene);
+				window.setTitle("");
+				window.show();
+			}
+			else
+			{
+				Promptc.setText("Appointment not found");
+			}
+			
+		}
+	    @FXML
+		private void CanceltoReschedule(ActionEvent event) throws IOException { 
+	    	
+	    	int check=0;
+			int appid=Integer.parseInt(AppID2.getText());
+			String Name=name2.getText();
+			int Cnic=Integer.parseInt(cnic2.getText());
+			CancelAppointmentController c=new CancelAppointmentController();
+			check=c.CancelAppointment(appid, Name, Cnic);
+			if(check!=0)
+			{	
+				Parent CalenderView = FXMLLoader.load(getClass().getResource("RescheduleAppointment.fxml"));
+				Scene CalenderScene=  new Scene(CalenderView);
+				Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+				window.setScene(CalenderScene);
+				window.setTitle("");
+				window.show();
+			}
+			else
+			{
+				Promptd.setText("Appointment not found");
+			}
+			
+		}
+	    
+	    @FXML
+	    private void RescheduleAddAppointmentDetails(ActionEvent event) throws IOException
+	    {
+	    	BookAppointmentController b=new BookAppointmentController();
+	    	String service=descBox1.getValue();
+	    	int Timem=Integer.parseInt(timem1.getText());
+	    	int Timeh=Integer.parseInt(timeh1.getText());
+	    	String Date=day1.getText()+"-"+month1.getText()+"-"+year1.getText();
+	    	String Name=name0.getText();
+	    	int Age=Integer.parseInt(age0.getText());
+	    	int Cnic=Integer.parseInt(cnic0.getText());
+	    	String Email=email0.getText();
+	    	b.BookAppointment(service, Timem,Timeh, Date,Name,Age,Cnic,Email);
+	    	Parent HomeView = FXMLLoader.load(getClass().getResource("AppointmentBookingSuccessful.fxml"));
+			Scene HomeScene=  new Scene(HomeView);
+			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+			window.setScene(HomeScene);
+			window.setTitle("Main Menu");
+			window.show();	
 	    }
 
 		@Override

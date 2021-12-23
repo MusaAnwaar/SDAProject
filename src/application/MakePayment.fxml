@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,35 +14,27 @@
             <Image url="@Images/v870-tang-36.jpg" />
          </image>
       </ImageView>
-      <Label ellipsisString="" layoutX="245.0" layoutY="78.0" prefHeight="90.0" prefWidth="208.0" text="Your Fee is :">
-         <font>
-            <Font name="Calisto MT Bold Italic" size="35.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </Label>
       <Button fx:id="Home" layoutX="768.0" layoutY="1.0" mnemonicParsing="false" onAction="#home" opacity="0.0" prefHeight="30.0" prefWidth="30.0" text="Button" />
       <ImageView disable="true" fitHeight="30.0" fitWidth="43.0" layoutX="768.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/25694.png" />
          </image>
       </ImageView>
-      <TextField editable="false" layoutX="423.0" layoutY="155.0" prefHeight="62.0" prefWidth="97.0" promptText="1000" style="-fx-background-color: d;" text="1000">
-         <font>
-            <Font name="Calisto MT Bold" size="30.0" />
-         </font>
-      </TextField>
       <ImageView disable="true" fitHeight="99.0" fitWidth="98.0" layoutX="411.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/3745576.png" />
          </image>
       </ImageView>
       <Button fx:id="Pay" layoutX="405.0" layoutY="312.0" mnemonicParsing="false" onAction="#Payment" opacity="0.0" prefHeight="49.0" prefWidth="109.0" text="Button" />
-      <ImageView disable="true" fitHeight="30.0" fitWidth="24.0" layoutX="520.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/33181.png" />
-         </image>
-      </ImageView>
+      <Label layoutX="229.0" layoutY="197.0" text="Your total payment is ">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="479.0" layoutY="197.0">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
