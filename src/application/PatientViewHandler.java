@@ -19,7 +19,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 public class PatientViewHandler implements Initializable{
 
@@ -58,13 +64,25 @@ public class PatientViewHandler implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<Patient> person = FXCollections.observableArrayList(
-        new Patient(12,20,"Moosa", 12345678,"moosa@gmail.com"),
-                new Patient(22,21,"Zainab", 45565556, "zainab@gmail.com"),
-                new Patient(33,60,"Rafia", 57543535, "rafia@gmail.com")
-            );
+    	
+    	Configuration cfg = new Configuration();
+		cfg.configure("hibernate.cfg.xml");
+		SessionFactory factory = cfg.buildSessionFactory();
+		//Put in DB handler
+		Session session = factory.openSession();
+		String query = "from Patient";
+		Query q=session.createQuery(query);
+		List<Patient> list=q.list(); 
+		
+		
+		ObservableList<Patient> person = FXCollections.observableArrayList(q.list());
+	
 
-        //int id, int age, String name, String cnic, String email
+        		/*FXCollections.observableArrayList(
+                new Patient(22,21,"Zainab", "45565556", "zainab@gmail.com"),
+                new Patient(33,60,"Rafia", "57543535", "rafia@gmail.com")
+            );*/
+
 
         //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
         PatientIDColumn.setCellValueFactory(new PropertyValueFactory<>("id"));

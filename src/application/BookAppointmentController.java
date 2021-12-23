@@ -1,6 +1,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class BookAppointmentController {
 	
@@ -11,19 +12,17 @@ public class BookAppointmentController {
 	  public void BookAppointment(String service,int timem,int timeh,String date,String name,int age,int cnic,String email)
 	  {
 		 Appointment a= new Appointment();
-		 a.Description=this.SearchCatalogue(service);
-		 a.setTimeh(timeh);
-		 a.setTimem(timem);
-		 a.Date=date;
-		 a.setAppointmentStatus(0);
-		 a.payment =new Payment(); 
-		 a.payment.Amount=a.Description.getFee();
-		 a.payment.setPaidStatus(0);
-		 a.booking=new Booking();
-		 a.booking.setBookingStatus(1);
-		 a.getBooking().setBookingRefCode(0);
-		 /*a.getBooking().setDateBooking(date);*/
 		 a.getBooking().setPatientDetails(age, name, cnic, email);
+		 a.booking.setBookingDetails(1, new Date());
+		 a.Description = this.SearchCatalogue(service);
+		 DBHandler ins = new DBHandler();
+		  ins.DescriptionDBHandler(a.Description);
+		 
+		 a.payment.setPaymentDetails(a.Description.getFee(), 0);
+		 
+		 a.setAppointmentDetails(a.Description,a.payment,a.booking, timem, timeh, date, 1);
+		 
+		 
 	  }
 	  public AppointmentDescription SearchCatalogue(String service)
 	  {
@@ -34,7 +33,7 @@ public class BookAppointmentController {
 		  for(int i=0;i<AppointmentCatalogue.size();i++)
 		  {
 			  a=AppointmentCatalogue.get(i);
-			  if(a.Name.compareTo(service)==0)
+			  if(a.getName().compareTo(service)==0)
 			  {
 				  b=a;
 			  }
