@@ -21,6 +21,7 @@ public class Clinic {
     {
         if (clinic == null) {
         	clinic = new Clinic();
+        	clinic.loadAppointmentCatalogue();
             //can initialize here
         }
         return clinic;
@@ -103,6 +104,10 @@ public class Clinic {
 		AC.add(h);
 		AC.add(i);
 		AC.add(j);
+		for(int i1=0;i1<AC.size();i1++)
+		{
+			System.out.println("This works");
+		}
 		clinic.setAppointmentCatalogue(AC);
 	}
 	
@@ -115,5 +120,12 @@ public class Clinic {
 			ins.setFeedback(f);
 			Feedbacks.add(f);
 
+	}
+	public void clinicBooks()
+	{
+		for(int i=0;i<clinic.AppointmentCatalogue.size();i++)
+		{
+			System.out.println("This works");
+		}
 	}
 }

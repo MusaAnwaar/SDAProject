@@ -8,6 +8,7 @@ public class BookAppointmentController {
 	  private static Clinic clinic = null; 
 	  public BookAppointmentController() {
 			clinic = clinic.getInstance();
+			//clinic.loadAppointmentCatalogue();
 		}
 	  public void BookAppointment(String service,int timem,int timeh,String date,String name,int age,int cnic,String email)
 	  {
@@ -21,6 +22,7 @@ public class BookAppointmentController {
 		 a.payment.setPaymentDetails(a.Description.getFee(), 0);
 		 
 		 a.setAppointmentDetails(a.Description,a.payment,a.booking, timem, timeh, date, 1);
+		 clinic.AppointmentSchedule.add(a);
 		 
 	  }
 	  public AppointmentDescription SearchCatalogue(String service)

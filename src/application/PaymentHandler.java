@@ -1,20 +1,26 @@
 package application;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class PaymentHandler {
+public class PaymentHandler implements Initializable{
 	
 	@FXML
 	Button Pay;
@@ -24,11 +30,16 @@ public class PaymentHandler {
 	TextField name=new TextField();
 	@FXML
 	TextField cnic=new TextField();
-	@FXML 
-	Label Fee=new Label();
+	
+	@FXML
+	ComboBox<String> descBox=new ComboBox<String>();
 	
 	@FXML
 	private Text Prompt=new Text();
+	
+	@FXML
+	Label Fee=new Label();
+	
 	
 	@FXML
     private void Payment(ActionEvent event)  throws IOException {
@@ -48,22 +59,24 @@ public class PaymentHandler {
 		int Cnic=Integer.parseInt(cnic.getText());
 		MakePaymentController p=new MakePaymentController();
 		int fee=p.getFee(appid, Name, Cnic);
-		
 		if(fee!=0)
 		{	
-			Fee.setText(String.valueOf(fee));
-			Parent CalenderView = FXMLLoader.load(getClass().getResource("MakePayment.fxml"));
-			Scene CalenderScene=  new Scene(CalenderView);
-			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-			window.setScene(CalenderScene);
-			window.setTitle("");
-			window.show();
+			Fee.setText("Your payment is "+ String.valueOf(fee));
 		}
 		else
 		{
 			Prompt.setText("Appointment not found");
 		}
 		
+	}
+	@FXML
+	private void ProceedToPay(ActionEvent event) throws IOException { 
+		Parent CalenderView = FXMLLoader.load(getClass().getResource("MakePayment.fxml"));
+		Scene CalenderScene=  new Scene(CalenderView);
+		Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+		window.setScene(CalenderScene);
+		window.setTitle("");
+		window.show();
 	}
 	 @FXML
 	    private void home(ActionEvent event) throws IOException {
@@ -74,4 +87,11 @@ public class PaymentHandler {
 			window.setTitle("Main Menu");
 			window.show();
 	    }
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		ObservableList<String> BoxInfo=FXCollections.observableArrayList("Credit Card","Cash","Debit Card","Bank Transfer","Mobile Payment","Others");
+		descBox.setItems(BoxInfo);
+
+		
+	}
 }
