@@ -35,6 +35,8 @@ public class ClinicHandler {
 	@FXML
 	Button Submit;
 	
+	DBHandler db=new DBHandler();
+	
 	@FXML
 	private Text Prompt=new Text();
 	
@@ -49,9 +51,8 @@ public class ClinicHandler {
 	
 	@FXML
 	TextField patient_id = new TextField();
-	
-	DBHandler db=new DBHandler();
-	
+
+
 /*	@FXML
 	TextField InvDisp= new TextField();
 */
@@ -69,10 +70,8 @@ public class ClinicHandler {
 	}
     @FXML
     private void LogIn() throws IOException {
-    	//clinic.fill();
-      
-    	db.Intialize();
-    	
+
+        db.Intialize();
     	String username = user_n.getText();
         String password = pass_w.getText();
         if (username.equals(str1) && password.equals(str2)) {
@@ -194,10 +193,6 @@ public class ClinicHandler {
     	String feedbackk=feedback.getText();
     	clinic.setFeedback(feedbackk);
     	System.out.print(feedbackk);
-    }
-    @FXML
-    private void Cancelled() throws IOException {
-    	
     }
     
     @FXML
