@@ -7,6 +7,7 @@ public class MakePaymentController {
 	 private static Clinic clinic = null; 
 	  public MakePaymentController() {
 			clinic = clinic.getInstance();
+			
 		}
 	  public int getFee(int appID,String name,int cnic)
 	  {

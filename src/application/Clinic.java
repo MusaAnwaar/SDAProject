@@ -13,6 +13,7 @@ public class Clinic {
     ArrayList<Appointment> AppointmentSchedule=new ArrayList<Appointment>();
     ArrayList<AppointmentDescription> AppointmentCatalogue=new ArrayList<AppointmentDescription>();
     ArrayList<Feedback> Feedbacks=new  ArrayList<Feedback>();
+    DBHandler clinicDBHandler = new DBHandler();
     
     private static Clinic clinic = null; 
     private Clinic() {
@@ -21,6 +22,9 @@ public class Clinic {
     {
         if (clinic == null) {
         	clinic = new Clinic();
+        	clinic.loadAppointmentCatalogue();
+        	clinic.clinicDBHandler.Intialize();
+  
             //can initialize here
         }
         return clinic;

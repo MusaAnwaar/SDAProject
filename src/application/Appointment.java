@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,15 +16,15 @@ import javax.persistence.TemporalType;
 @Entity
 public class Appointment {
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="appdesc_id")
     AppointmentDescription Description;
     
-    @OneToOne	
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="paymentID")
     Payment payment;
     
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="bookingID")
     Booking booking;
     

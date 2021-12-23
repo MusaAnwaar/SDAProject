@@ -51,6 +51,7 @@ public class PaymentHandler {
 		
 		if(fee!=0)
 		{	
+			System.out.println(fee);
 			Fee.setText(String.valueOf(fee));
 			Parent CalenderView = FXMLLoader.load(getClass().getResource("MakePayment.fxml"));
 			Scene CalenderScene=  new Scene(CalenderView);

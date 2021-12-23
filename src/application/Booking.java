@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,11 +23,11 @@ public class Booking {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int BookingRefCode;//p.key
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="pid")
     Patient patient;
 	
-	/*@OneToOne(mappedBy = "Appointment")
+	/*@OneToOne
 	@JoinColumn(name="app_id")
 	Appointment appointment;*/
     
@@ -70,8 +71,8 @@ public class Booking {
 	}
 
 
-
-/*	public Appointment getAppointment() {
+/*
+	public Appointment getAppointment() {
 		return appointment;
 	}
 
