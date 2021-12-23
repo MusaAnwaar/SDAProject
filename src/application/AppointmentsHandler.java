@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -157,7 +158,7 @@ public class AppointmentsHandler implements Initializable {
 	    	String service=descBox.getValue();
 	    	int Timem=Integer.parseInt(timem.getText());
 	    	int Timeh=Integer.parseInt(timeh.getText());
-	    	String Date=day.getText()+"-"+month.getText()+"-"+year.getText();
+	    	String Date=(year.getText()+"-"+month.getText()+"-"+day.getText());
 	    	String Name=name.getText();
 	    	int Age=Integer.parseInt(age.getText());
 	    	int Cnic=Integer.parseInt(cnic.getText());

@@ -13,6 +13,11 @@
 	<property name = "show_sql">true</property>	
 	<mapping class = "application.Patient"/>
 	<mapping class = "application.Feedback"/>
+	<mapping class = "application.Booking"/>
+	<mapping class = "application.Appointment"/>
+	<mapping class = "application.AppointmentDescription"/>
+	<mapping class = "application.Payment"/>
+		
 	</session-factory>
 
 </hibernate-configuration>

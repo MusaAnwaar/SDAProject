@@ -1,9 +1,12 @@
 package application;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 
@@ -21,16 +24,21 @@ public class Patient {
 	
 	private String email;
 	
-	public Patient(int id, int age, String name, int cnic, String email) {
+	/*@OneToMany
+	private List<Booking> bookings;*/
+	
+	
+	public Patient(int id, int age, String name, int cnic, String email, List<Booking> Bookings) {
 		super();
 		this.id = id;
 		this.age = age;
 		this.name = name;
 		this.cnic = cnic;
 		this.email = email;
+		//this.bookings = Bookings;
 	}
 	public Patient() {
-		super();
+		//this.bookings =new Booking();
 		// TODO Auto-generated constructor stub
 	}
 	public int getId() {
@@ -63,6 +71,14 @@ public class Patient {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+
+	/*public List<Booking> getBookings() {
+		return bookings;
+	}
+	public void setBookings(List<Booking> bookings) {
+		this.bookings = bookings;
+	}*/
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
