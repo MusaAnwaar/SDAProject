@@ -49,16 +49,25 @@
             <Image url="@Images/1642054.png" />
          </image>
       </ImageView>
-      <ImageView disable="true" fitHeight="60.0" fitWidth="66.0" layoutX="474.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="71.0" fitWidth="114.0" layoutX="498.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Images/152533.png" />
+            <Image url="@Images/3745576.png" />
          </image>
       </ImageView>
-      <Button layoutX="474.0" layoutY="386.0" mnemonicParsing="false" onAction="#getFee" opacity="0.0" prefHeight="60.0" prefWidth="60.0" text="Button" />
-      <Text fx:id="Prompt" fill="#9c0505" layoutX="436.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0">
+      <Button layoutX="337.0" layoutY="358.0" mnemonicParsing="false" onAction="#getFee" prefHeight="42.0" prefWidth="65.0" style="-fx-background-radius: 20; -fx-background-color: #3db1ab;" text="Get Fee">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      <Text fx:id="Prompt" fill="#9c0505" layoutX="466.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
+      <Label fx:id="Fee" layoutX="442.0" layoutY="366.0">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="498.0" layoutY="429.0" mnemonicParsing="false" onAction="#ProceedToPay" opacity="0.0" prefHeight="42.0" prefWidth="71.0" text="Button" />
    </children>
 </AnchorPane>

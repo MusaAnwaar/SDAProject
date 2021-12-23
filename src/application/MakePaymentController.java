@@ -28,8 +28,7 @@ public class MakePaymentController {
 			  }
 				  
 		  }
-		  return Fee;
-		  
+		  return Fee;  
 	  }
 
 }
