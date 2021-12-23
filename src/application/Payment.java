@@ -23,7 +23,6 @@ public class Payment {
     
     //String Mode;
     @Temporal(TemporalType.DATE)
-    //@Transient
     private Date DatePaid;
 
     public Payment(int paymentID,int amount, int paidStatus, String mode, Date datePaid) {

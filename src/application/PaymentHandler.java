@@ -21,11 +21,12 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class PaymentHandler implements Initializable{
-	
-	@FXML
-	Button Pay;
 	@FXML
 	TextField AppID=new TextField();
+	
+	@FXML
+	TextField AppID2=new TextField();
+	
 	@FXML
 	TextField name=new TextField();
 	@FXML
@@ -43,14 +44,16 @@ public class PaymentHandler implements Initializable{
 	
 	@FXML
     private void Payment(ActionEvent event)  throws IOException {
-		Stage stage = (Stage) Pay.getScene().getWindow();
- 	     
-	     stage.close();
-	     Scene quizScene = new Scene(FXMLLoader.load(getClass().
-	     getResource("PaymentSuccessful.fxml")));
-		 Stage primaryStage1 = new Stage();
-		 primaryStage1.setScene(quizScene);
-		 primaryStage1.show();
+		MakePaymentController p=new MakePaymentController();
+		int appid=Integer.parseInt(AppID2.getText());
+		p.MakePayment(appid);//PaymentSuccessful
+		//System.out.println(appid+"THIS SHOULD WORK");
+		Parent CalenderView = FXMLLoader.load(getClass().getResource("PaymentSuccessful.fxml"));
+		Scene CalenderScene=  new Scene(CalenderView);
+		Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+		window.setScene(CalenderScene);
+		window.setTitle("");
+		window.show();
     }
 	@FXML
 	private void getFee(ActionEvent event) throws IOException { 
@@ -61,10 +64,7 @@ public class PaymentHandler implements Initializable{
 		int fee=p.getFee(appid, Name, Cnic);
 		if(fee!=0)
 		{	
-
 			Fee.setText("Your payment is "+ String.valueOf(fee));
-
-
 		}
 		else
 		{

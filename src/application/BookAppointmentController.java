@@ -25,7 +25,7 @@ public class BookAppointmentController {
 		 a.setAppointmentDetails(a.Description,a.payment,a.booking, timem, timeh, date, 1);
 		 clinic.AppointmentSchedule.add(a);
 		 
-		 clinic.AppointmentSchedule.add(a);
+		 //clinic.AppointmentSchedule.add(a);
 		 
 		 
 	  }

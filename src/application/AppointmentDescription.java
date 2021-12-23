@@ -1,6 +1,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -51,7 +52,7 @@ public class AppointmentDescription {
 	public void SearchCatalogue(String service)
 	  {
 		  AppointmentDescription b= new AppointmentDescription();
-		  ArrayList<AppointmentDescription> AppointmentCatalogue=new ArrayList<AppointmentDescription>();
+		  List<AppointmentDescription> AppointmentCatalogue=new ArrayList<AppointmentDescription>();
 		  AppointmentCatalogue=clinic.getAppointmentCatalogue();
 		  for(int i=0;i<AppointmentCatalogue.size();i++)
 		  {
