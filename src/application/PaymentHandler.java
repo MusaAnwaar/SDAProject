@@ -61,7 +61,10 @@ public class PaymentHandler implements Initializable{
 		int fee=p.getFee(appid, Name, Cnic);
 		if(fee!=0)
 		{	
+
 			Fee.setText("Your payment is "+ String.valueOf(fee));
+
+
 		}
 		else
 		{

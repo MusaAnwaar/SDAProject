@@ -48,7 +48,7 @@ public class AppointmentDescription {
 		Fee = fee;
 	}
 
-	/*public void SearchCatalogue(String service)
+	public void SearchCatalogue(String service)
 	  {
 		  AppointmentDescription b= new AppointmentDescription();
 		  ArrayList<AppointmentDescription> AppointmentCatalogue=new ArrayList<AppointmentDescription>();
@@ -58,11 +58,12 @@ public class AppointmentDescription {
 			  b=AppointmentCatalogue.get(i);
 			  if(b.Name.compareTo(service)==0)
 			  {
+				  //System.out.println("hii");
 				  this.setFee(b.getFee());
 				  this.setName(b.getName());
 			  }
 		  }
 		  DBHandler ins = new DBHandler();
 		  ins.DescriptionDBHandler(this);
-	  }*/
+	  }
 }
