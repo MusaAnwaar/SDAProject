@@ -18,6 +18,7 @@
 	<mapping class = "application.Appointment"/>
 	<mapping class = "application.AppointmentDescription"/>
 	<mapping class = "application.Payment"/>
+	<mapping class = "application.Ledger"/>
 		
 	</session-factory>
 
