@@ -24,7 +24,9 @@ public class BookAppointmentController {
 		 
 		 a.setAppointmentDetails(a.Description,a.payment,a.booking, timem, timeh, date, 1);
 		 clinic.AppointmentSchedule.add(a);
-		 
+		  
+		 Ledger l = new Ledger();
+		 l.setLedgerDetails(a.payment,new Date(),a.payment.Amount);
 	  }
 	  /*
 	  public AppointmentDescription SearchCatalogue(String service)

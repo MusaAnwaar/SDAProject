@@ -151,6 +151,21 @@ public class DBHandler
 		factory.close();
 	}
 	
+	public void LedgerDBHandler(Ledger obj)
+	{
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		
+		Session session = factory.openSession();
+	
+		
+		session.beginTransaction();
+		session.save(obj);
+		session.getTransaction().commit();
+		
+		session.close();
+		factory.close();
+	}
+	
 	public void cancelUpdateDBHandler(int id)
 	{
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
